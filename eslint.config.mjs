@@ -1,4 +1,4 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
@@ -7,11 +7,10 @@ import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   globalIgnores(['dist', 'node_modules', '.turbo', 'coverage']),
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
+  eslint.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
-    prettier,
+    extends: [tseslint.configs.recommendedTypeChecked, tseslint.configs.stylisticTypeChecked],
     plugins: {
       import: importPlugin,
     },
@@ -21,12 +20,12 @@ export default defineConfig([
         ...globals.node,
       },
       parserOptions: {
+        projectService: true,
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
     },
     rules: {
-      ...tseslint.configs.strict.rules,
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -44,4 +43,5 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
+  prettier,
 ]);
