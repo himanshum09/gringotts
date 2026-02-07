@@ -1,30 +1,6 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "resolveJsonModule": true
-  },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "extends": "./packages/tsconfig/base.json",
+  "compilerOptions": {},
+  "references": [{ "path": "apps/core" }, { "path": "apps/web-app" }],
+  "include": []
 }

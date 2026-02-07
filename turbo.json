@@ -1,34 +1,28 @@
 {
-    "$schema": "https://v2-8-3.turborepo.dev/schema.json",
-    "cacheDir": ".turbo/cache",
-    "tasks": {
-        "build": {
-            "description": "Compiles the application for production deployment",
-            "dependsOn": [
-                "^build"
-            ],
-            "outputs": [
-                "dist/**"
-            ],
-        },
-        "test": {
-            "description": "Runs tests for the application",
-            "outputs": [
-                "coverage/**"
-            ],
-            "dependsOn": [
-                "build"
-            ],
-        },
-        "dev": {
-            "cache": false,
-            "persistent": true,
-        },
-        "typecheck": {
-            "description": "Checks the type safety of the application",
-            "dependsOn": [
-                "^build"
-            ]
-        }
+  "$schema": "https://v2-8-3.turborepo.dev/schema.json",
+  "cacheDir": ".turbo/cache",
+  "tasks": {
+    "build": {
+      "description": "Compiles the application for production deployment",
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "description": "Runs tests for the application",
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "description": "Checks the type safety of the application",
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "description": "Lints the codebase",
+      "dependsOn": ["^build"]
     }
+  }
 }
