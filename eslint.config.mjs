@@ -16,8 +16,8 @@ export default defineConfig([
     },
     languageOptions: {
       globals: {
-        ...globals.browser,
         ...globals.node,
+        ...globals.jest,
       },
       parserOptions: {
         projectService: true,
@@ -41,6 +41,7 @@ export default defineConfig([
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-extraneous-class': 'off',
     },
   },
   prettier,
