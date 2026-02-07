@@ -10,7 +10,7 @@ export default defineConfig([
   eslint.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
-    extends: [tseslint.configs.recommendedTypeChecked, tseslint.configs.stylisticTypeChecked],
+    extends: [tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],
     plugins: {
       import: importPlugin,
     },
