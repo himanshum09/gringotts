@@ -14,7 +14,7 @@
   "author": "Himanshu",
   "license": "ISC",
   "keywords": [],
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "engines": {
     "node": ">=20"
   },
