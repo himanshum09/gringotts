@@ -8,6 +8,13 @@
       "when": 1774779641617,
       "tag": "0000_create_identity_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774799406514,
+      "tag": "0001_add_user_auth_accounts_table",
+      "breakpoints": true
     }
   ]
 }
