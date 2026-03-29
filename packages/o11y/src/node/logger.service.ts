@@ -47,7 +47,7 @@ export class LoggerService implements ILogger {
     private readonly context: string,
     private readonly method?: string,
   ) {
-    this.effectiveLevel = LEVELS[this.resolveLevel()] ?? LEVELS.info;
+    this.effectiveLevel = LEVELS[this.resolveLevel()];
   }
 
   /**
@@ -118,7 +118,7 @@ export class LoggerService implements ILogger {
     }
   }
 
-  error(message: string, error?: Error | unknown, meta?: LogMeta): void {
+  error(message: string, error?: unknown, meta?: LogMeta): void {
     if (this.shouldLog('error')) {
       this.pinoLogger.error(
         {
