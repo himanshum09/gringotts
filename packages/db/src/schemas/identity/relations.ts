@@ -7,7 +7,7 @@ import { userIdentity } from './user-identity.js';
 export const userIdentityRelations = relations(userIdentity, ({ many }) => ({
   sessions: many(session),
   authAccounts: many(userAuthAccount),
-  financialAccount: many(financialAccount),
+  financialAccounts: many(financialAccount),
 }));
 
 export const sessionRelations = relations(session, ({ one }) => ({
