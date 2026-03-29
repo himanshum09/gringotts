@@ -8,10 +8,12 @@ export const session = pgTable(
     id: uuid('id')
       .primaryKey()
       .$defaultFn(() => uuidv7()),
-    userIdentityId: uuid('user_identity_id').references(() => userIdentity.id, {
-      onDelete: 'cascade',
-      onUpdate: 'cascade',
-    }),
+    userIdentityId: uuid('user_identity_id')
+      .references(() => userIdentity.id, {
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
+      })
+      .notNull(),
     absoluteExpiryMinutes: integer('absolute_expiry_minutes').notNull(),
     inactivityTimeoutMinutes: integer('inactivity_timeout_minutes').notNull(),
     userAgent: text('user_agent'),
