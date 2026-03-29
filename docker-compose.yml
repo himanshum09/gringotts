@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: fin-folio-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: finfolio
+      POSTGRES_PASSWORD: finfolio
+      POSTGRES_DB: finfolio
+    ports:
+      - '5433:5432' # host:container — avoids conflict with any local postgres on 5432
+    volumes:
+      - fin-folio-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U finfolio -d finfolio']
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  fin-folio-db-data:

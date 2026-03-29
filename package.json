@@ -9,7 +9,13 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "infra:start": "node scripts/setup.mjs infra:start",
+    "infra:stop": "node scripts/setup.mjs infra:stop",
+    "env:copy": "node scripts/setup.mjs env:copy",
+    "db:generate": "pnpm --filter @fin-folio/db run db:generate",
+    "db:migrate": "node scripts/setup.mjs db:migrate",
+    "setup": "node scripts/setup.mjs"
   },
   "author": "Himanshu",
   "license": "ISC",
