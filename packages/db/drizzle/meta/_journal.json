@@ -15,6 +15,13 @@
       "when": 1774799406514,
       "tag": "0001_add_user_auth_accounts_table",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1774808522134,
+      "tag": "0002_add_financial_accounts_table",
+      "breakpoints": true
     }
   ]
 }
