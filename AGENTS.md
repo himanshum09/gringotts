@@ -86,7 +86,7 @@ pnpm run preview       # Preview production build locally
 **Database** (`packages/db`):
 
 ```bash
-pnpm run db:generate -- --name <description>  # Generate migration from schema changes
+pnpm run db:generate <name>                              # Generate migration from schema changes
 pnpm run db:migrate                            # Apply pending migrations
 pnpm --filter @fin-folio/db run db:studio      # Open Drizzle Studio browser UI
 ```

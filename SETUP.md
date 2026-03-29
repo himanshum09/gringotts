@@ -94,13 +94,13 @@ pnpm dev              # start the backend in watch mode
 When you modify a table definition in `packages/db/src/schemas/`:
 
 ```bash
-# Generate a migration — always pass --name to describe what changed
-pnpm run db:generate -- --name <description>
+# Generate a migration — always pass a name to describe what changed
+pnpm run db:generate <name>
 
 # Examples:
-pnpm run db:generate -- --name create_accounts_table
-pnpm run db:generate -- --name add_avatar_url_to_users
-pnpm run db:generate -- --name add_idx_sessions_expires_at
+pnpm run db:generate create_accounts_table
+pnpm run db:generate add_avatar_url_to_users
+pnpm run db:generate add_idx_sessions_expires_at
 
 # Apply pending migrations to your local DB
 pnpm run db:migrate

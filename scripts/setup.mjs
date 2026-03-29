@@ -150,6 +150,21 @@ function runMigrations() {
   console.log('  Migrations complete');
 }
 
+function generateMigration(name) {
+  console.log('  Building schema...');
+  run(pnpmCommand, ['--filter', '@fin-folio/db', 'run', 'build']);
+
+  const args = ['--filter', '@fin-folio/db', 'exec', 'drizzle-kit', 'generate'];
+  if (name) {
+    args.push('--name', name);
+    console.log(`  Generating migration: ${name}`);
+  } else {
+    console.log('  Generating migration (no --name given, filename will be random)');
+  }
+
+  run(pnpmCommand, args);
+}
+
 function setup() {
   console.log('\n── Step 1: Copy environment files');
   copyEnvFiles();
@@ -179,6 +194,9 @@ try {
       break;
     case 'infra:stop':
       stopInfra();
+      break;
+    case 'db:generate':
+      generateMigration(process.argv[3]);
       break;
     case 'db:migrate':
       runMigrations();

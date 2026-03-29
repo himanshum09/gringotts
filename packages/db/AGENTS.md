@@ -219,16 +219,16 @@ Use `to*` converters only at system boundaries — HTTP request params, external
 Always pass `--name` to give the migration a meaningful filename instead of the random default:
 
 ```bash
-pnpm run db:generate -- --name <description>
+pnpm run db:generate <name>
 ```
 
 **Examples:**
 
 ```bash
-pnpm run db:generate -- --name create_accounts_table
-pnpm run db:generate -- --name add_avatar_url_to_users
-pnpm run db:generate -- --name add_idx_sessions_expires_at
-pnpm run db:generate -- --name drop_legacy_tokens_table
+pnpm run db:generate create_accounts_table
+pnpm run db:generate add_avatar_url_to_users
+pnpm run db:generate add_idx_sessions_expires_at
+pnpm run db:generate drop_legacy_tokens_table
 ```
 
 **Naming convention:** lowercase with underscores, verb first:
