@@ -1,2 +1,2 @@
-export * from './finance/index.js';
-export * from './identity/index.js';
+export * from './finance/index';
+export * from './identity/index';

@@ -1,7 +1,7 @@
 import { index, pgTable, text, timestamp, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
-import { uuidv7 } from '../../utils/uuidv7.js';
-import { userAuthAccountProviderEnum } from './enums.js';
-import { userIdentity } from './user-identity.js';
+import { uuidv7 } from '../../utils/uuidv7';
+import { userAuthAccountProviderEnum } from './enums';
+import { userIdentity } from './user-identity';
 
 export const userAuthAccount = pgTable(
   'user_auth_accounts',

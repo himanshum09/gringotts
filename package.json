@@ -20,7 +20,7 @@
   "author": "Himanshu",
   "license": "ISC",
   "keywords": [],
-  "packageManager": "pnpm@10.29.1",
+  "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=20"
   },

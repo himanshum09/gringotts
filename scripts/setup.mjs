@@ -151,15 +151,12 @@ function runMigrations() {
 }
 
 function generateMigration(name) {
-  console.log('  Building schema...');
-  run(pnpmCommand, ['--filter', '@fin-folio/db', 'run', 'build']);
-
   const args = ['--filter', '@fin-folio/db', 'exec', 'drizzle-kit', 'generate'];
   if (name) {
     args.push('--name', name);
     console.log(`  Generating migration: ${name}`);
   } else {
-    console.log('  Generating migration (no --name given, filename will be random)');
+    console.log('  Generating migration (no name given, filename will be random)');
   }
 
   run(pnpmCommand, args);

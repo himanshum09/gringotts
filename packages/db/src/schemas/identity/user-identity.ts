@@ -1,5 +1,5 @@
 import { boolean, pgTable, text, timestamp, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
-import { uuidv7 } from '../../utils/uuidv7.js';
+import { uuidv7 } from '../../utils/uuidv7';
 
 export const userIdentity = pgTable(
   'user_identities',

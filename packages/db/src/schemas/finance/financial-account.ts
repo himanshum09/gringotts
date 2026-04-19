@@ -1,7 +1,7 @@
 import { boolean, index, numeric, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
-import { uuidv7 } from '../../utils/uuidv7.js';
-import { userIdentity } from '../identity/user-identity.js';
-import { financialAccountTypeEnum } from './enums.js';
+import { uuidv7 } from '../../utils/uuidv7';
+import { userIdentity } from '../identity/user-identity';
+import { financialAccountTypeEnum } from './enums';
 
 export const financialAccount = pgTable(
   'financial_accounts',

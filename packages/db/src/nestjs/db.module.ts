@@ -1,8 +1,8 @@
 import type { DynamicModule, OnModuleDestroy } from '@nestjs/common';
 import { Global, Inject, Module } from '@nestjs/common';
 import type { Pool } from 'pg';
-import { createDb } from '../client.js';
-import { DB, DB_POOL } from './tokens.js';
+import { createDb } from '../client';
+import { DB, DB_POOL } from './tokens';
 
 export interface DbModuleConfig {
   /** PostgreSQL connection string, e.g. `postgresql://user:pass@host/db` */

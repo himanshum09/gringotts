@@ -1,4 +1,4 @@
-import type { Db } from './client.js';
+import type { Db } from './client';
 
 // Re-export for convenient consumption across the app
 export type { Db };
