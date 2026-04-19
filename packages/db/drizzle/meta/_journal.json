@@ -22,6 +22,13 @@
       "when": 1774808522134,
       "tag": "0002_add_financial_accounts_table",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1776598219535,
+      "tag": "0003_add_transactions_table",
+      "breakpoints": true
     }
   ]
 }

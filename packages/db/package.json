@@ -6,20 +6,22 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./nestjs": {
       "types": "./dist/nestjs/index.d.ts",
-      "default": "./dist/nestjs/index.js"
+      "import": "./dist/nestjs/index.mjs",
+      "require": "./dist/nestjs/index.js"
     }
   },
   "scripts": {
-    "db:generate": "pnpm build && drizzle-kit generate",
-    "db:migrate": "pnpm build && drizzle-kit migrate",
-    "db:push": "pnpm build && drizzle-kit push",
-    "db:studio": "pnpm build && drizzle-kit studio",
-    "build": "tsc -p tsconfig.json",
-    "dev": "tsc -p tsconfig.json --watch",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "echo 'No tests yet'"
@@ -38,6 +40,7 @@
     "@types/pg": "^8.11.0",
     "drizzle-kit": "^0.31.0",
     "eslint": "^9.39.2",
+    "tsup": "^8.0.0",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
